@@ -1,0 +1,11 @@
+knp_gaufrette:
+    adapters:
+        cdn:
+            local:
+                directory: '%kernel.project_dir%/public'
+                create: true
+
+    filesystems:
+        cdn:
+            adapter:    cdn
+            alias:      cdn_filesystem

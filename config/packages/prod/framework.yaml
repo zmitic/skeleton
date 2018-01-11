@@ -1,0 +1,6 @@
+#framework:
+#    assets:
+#        packages:
+#            frontend:
+#                base_urls:
+#                    - '%env(CDN_BASE_URL)%'

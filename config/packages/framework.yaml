@@ -1,0 +1,19 @@
+framework:
+    secret: '%env(APP_SECRET)%'
+    default_locale: en
+    csrf_protection: ~
+    #http_method_override: true
+
+    session:
+        handler_id: ~
+    templating:
+        engines: twig
+
+    assets:
+        packages:
+            frontend:
+                json_manifest_path: '%kernel.project_dir%/public/build/manifest.json'
+    #esi: ~
+    #fragments: ~
+    php_errors:
+        log: true

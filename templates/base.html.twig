@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+    </head>
+    <body>
+        {% block body %}
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <p>{{ asset('build/images/firefly_01.jpg', 'frontend') }}</p>
+                        <p>{{ asset('build/images/firefly_01.jpg', 'frontend')|imagine_filter('xs') }}</p>
+                    </div>
+                    <div class="col-xs-6">
+                        {#<img src="{{ asset('build/images/firefly_01.jpg', 'frontend') }}" />#}
+                        <img src="{{ asset('build/images/firefly_01.jpg', 'frontend')|imagine_filter('xs') }}" />
+                        {#<img src="{{ 'build/images/firefly_01.jpg'|imagine_filter('xs') }}" />#}
+                    </div>
+                </div>
+            </div>
+
+        {% endblock %}
+        {% block javascripts %}
+
+
+
+
+            {% include '_includes/assets.html.twig' %}
+        {% endblock %}
+    </body>
+</html>

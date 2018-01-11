@@ -1,0 +1,32 @@
+liip_imagine:
+    # valid drivers options include "gd" or "gmagick" or "imagick"
+    driver: "gd"
+
+    filter_sets:
+        xs:
+            filters :
+                thumbnail: { size : [64, 64], mode : outbound }
+            post_processors:
+                jpegoptim: { strip_all: true, max: 70, progressive: true }
+                optipng: { strip_all: true, level: 5 }
+        sm:
+            filters :
+                thumbnail  : { size : [150, 115], mode : outbound }
+            post_processors:
+                jpegoptim: { strip_all: true, max: 70, progressive: true }
+                optipng: { strip_all: true, level: 5 }
+        md:
+            filters:
+                upscale: { min: [337, 258] }
+                thumbnail: { size: [337, 258], mode: outbound, allow_upscale: true  }
+            post_processors:
+                jpegoptim: { strip_all: true, max: 50, progressive: true }
+                optipng: { strip_all: true, level: 5 }
+        lg:
+            filters:
+                downscale:
+                    max : [536, 411]
+                    mode : outbound
+            post_processors:
+                jpegoptim: { strip_all: true, max: 70, progressive: true }
+                optipng: { strip_all: true, level: 5 }

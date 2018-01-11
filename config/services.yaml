@@ -1,0 +1,30 @@
+imports:
+    - { resource: parameters.yaml }
+
+parameters:
+    locale: 'en'
+
+services:
+    # default configuration for services in *this* file
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+        bind:
+            $manifestFilename: '%kernel.project_dir%/public/build/manifest.json'
+            $cdnFileSystem: '@cdn_filesystem'
+            $publicDir: '%kernel.project_dir%/public'
+            $isDebug: '%kernel.debug%'
+
+    App\:
+        resource: '../src/*'
+        exclude: '../src/{Entity,Migrations,Tests}'
+
+    App\Controller\:
+        resource: '../src/Controller'
+        tags: ['controller.service_arguments']
+
+
+
+
+

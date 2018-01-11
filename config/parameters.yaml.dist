@@ -1,0 +1,4 @@
+parameters:
+    cdn_adapter_config:
+        local:
+            directory: /media/mitke/projects/skeleton_cdn
